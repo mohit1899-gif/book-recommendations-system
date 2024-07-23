@@ -7,7 +7,7 @@
 
   <style>
 
-    body {
+body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-size: cover;
       background-position: center;
@@ -19,7 +19,7 @@
     }
 
     .container {
-      max-width: 600px;
+      max-width:1000px; /* Increased width */
       margin: 50px auto;
       padding: 20px;
       background-color: #f0f0f0;
@@ -31,7 +31,23 @@
 
     h1 {
       text-align: center;
-      color: #c2bc0d;
+      color: #ca0b0b;
+      overflow: hidden;
+      border-right: .15em solid #d70e0e;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #c2bc0d; }
     }
 
     .form-group {
@@ -50,7 +66,7 @@
       width: calc(100% - 24px); /* Adjusted for padding */
       padding: 12px;
       border: 1px solid #bab2b2;
-      border-radius: 6px;
+      border-radius: 4px; /* Changed to squarish */
       box-sizing: border-box;
       font-size: 16px;
       transition: border-color 0.3s ease-in-out;
@@ -71,7 +87,7 @@
       background-color: #edc709;
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px; /* Changed to squarish */
       cursor: pointer;
       font-size: 18px;
       transition: background-color 0.3s ease-in-out;
@@ -90,7 +106,7 @@
     .genre-section select {
       padding: 12px;
       font-size: 16px;
-      border-radius: 6px;
+      border-radius: 4px; /* Changed to squarish */
       border: 1px solid #bab2b2;
       transition: border-color 0.3s ease-in-out;
       color: #555;
@@ -122,12 +138,12 @@
 
     .button-getRecommendations {
       background: #d2a609;
-      border-radius: 999px;
+      border-radius: 4px; /* Changed to squarish */
       box-shadow: #f4d702 0 10px 20px -10px;
       box-sizing: border-box;
       color: #FFFFFF;
       cursor: pointer;
-      font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+      font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
       font-size: 16px;
       font-weight: 700;
       line-height: 24px;
@@ -158,13 +174,13 @@
     .logout-button {
       background: #FF4742;
       border: 1px solid #FF4742;
-      border-radius: 6px;
+      border-radius: 4px; /* Changed to squarish */
       box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
       box-sizing: border-box;
       color: #FFFFFF;
       cursor: pointer;
       display: inline-block;
-      font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+      font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
       font-size: 16px;
       font-weight: 300;
       line-height: 12px;
@@ -191,7 +207,7 @@
       opacity: .5;
     }
     
-    /*User Rating*/
+    /* User Rating */
     .rating-form {
       margin-top: 10px;
     }
@@ -200,7 +216,7 @@
       margin-right: 10px;
     }
 
-    /*Book Viewer*/
+    /* Book Viewer */
 
     .book-list {
       margin-top: 30px;
@@ -217,7 +233,7 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    /*Book Viewer Overlay*/
+    /* Book Viewer Overlay */
     .overlay {
       position: fixed;
       top: 0;
@@ -234,7 +250,7 @@
     }
 
     .overlay-content {
-      background-color:rgb(149, 148, 154);;
+      background-color: rgb(149, 148, 154);
       padding: 20px;
       border-radius: 8px;
       width: 80%;
@@ -244,46 +260,20 @@
     }
 
     .close-btn {
-      position: fixed; /* Change from absolute to fixed */
-      top: 50px; /* Adjust positioning */
-      right: 90px; /* Adjust positioning */
+      position: absolute;
+      top: 10px;
+      right: 10px;
       background: #FF4742;
-      color: #FFFFFF;
-      border: none;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
-      line-height: 30px;
-      text-align: center;
+      border: 1px solid #FF4742;
+      border-radius: 4px; /* Changed to squarish */
+      color: white;
+      padding: 10px;
       cursor: pointer;
-      z-index: 1001; /* Ensure the button is above the overlay */
     }
 
     .close-btn:hover {
-      background: #d43f3a;
-    }
-
-    .button-browse {
-      background: #e8e8ed;
-      border-radius: 999px;
-      box-shadow: #e7e7eb 0 10px 20px -10px;
-      box-sizing: border-box;
-      color: #FFFFFF;
-      cursor: pointer;
-      font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 24px;
-      opacity: 1;
-      outline: 0 solid transparent;
-      padding: 8px 18px;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-      width: fit-content;
-      word-break: break-word;
-      border: 0;
+      background-color: #ff9997;
+      border: 1px solid #ff9997;
     }
 
   </style>
@@ -294,13 +284,13 @@
     <h1>BOOK RECOMMENDATION SYSTEM 📚</h1>
 
     <div class="account-info">
-      <p class="button-browse" style="font-family: 'Untitled Sans'; font-size: 19px; font-weight: 400; letter-spacing: -0.20px; color: rgb(197, 214, 12);">{{ user_email }}</p>
+      <p class="button-browse" style="font-family: 'Untitled Sans'; font-size: 19px; font-weight: 400; letter-spacing: -0.20px; color: rgb(142, 6, 115);">{{ user_email }}</p>
       <a href="/logout" class="button-getRecommendations">Logout</a>
     </div>
 
     <div class="genre-section">
       <h2>Select Genre and Sub-Genre</h2>
-      <select id="genre-select" onchange="updateSubGenres()" style="background: #fff; border-radius: 999px; box-shadow: #f1f0f1 0 10px 20px -10px; box-sizing: border-box;
+      <select id="genre-select" onchange="updateSubGenres()" style="background: #f3efef; border-radius: 999px; box-shadow: #c8c5c7 0 10px 20px -10px; box-sizing: border-box;
       color: #757575;">
         <option style="background: #ffffff; color: #757575;" value="">Select Genre</option>
         <option style="background: #FFFFFF; color: #757575;" value="Fiction">Fiction</option>
